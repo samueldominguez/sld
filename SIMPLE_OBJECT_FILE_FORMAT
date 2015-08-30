@@ -1,0 +1,20 @@
+The first section "symbols" contains the symbol identifier to the left
+and the respective value to the right (separated by a space). Each
+symbol and respective value go on their own line. The next section is
+the binary section, which contains the binary words in text format and
+hex format, as well as symbol references which are actually refered to
+by their identifiers (e.g. 0x8c01 print_screen ...). The binary
+section goes on 1 line, with the next line being the "end" which marks
+the last section of the simple object file format.
+
+NOTE:only the symbols: and end part of the object file are mandatory.
+This is to allow for object files that are simple references for
+library linking.
+
+The previous header and this sentence are not part of the object design.
+symbols:
+<symbolname> <value>
+...
+binary:
+0x<hex> 0x<hex> <symbol reference> 0x<hex> ...
+end
