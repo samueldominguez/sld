@@ -5,6 +5,7 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
+#include <arpa/inet.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,5 +21,6 @@ u16 start_write_address;
 
 /* expects out file to be an open stream, writes in big endian from ram */
 void write_binary(FILE *out);
+void reverse_words();
 
 #endif /* OUTPUT_H */
