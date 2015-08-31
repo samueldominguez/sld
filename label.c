@@ -21,9 +21,9 @@ int get_symbol_value(char *s, int *error)
 	int i;
 	
 	for (i = 0; i < label_count; ++i) {
-		if (strcmp(label_table[label_count].name, s) == 0) {
+		if (strcmp(label_table[i].name, s) == 0) {
 			*error = 0;
-			return label_table[label_count].ram_address;
+			return label_table[i].ram_address;
 		}
 	}
 	*error = 1;

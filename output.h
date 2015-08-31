@@ -13,7 +13,7 @@
 
 #define MAX_SYMBOL_LINE_SIZE		73
 #define MAX_SYMBOL_SIZE			64
-#define MAX_VALUE_SIZE			 7
+#define MAX_VALUE_SIZE			 9
 
 u16 ram[DISK_SIZE];
 u16 currw;

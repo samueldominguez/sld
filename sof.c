@@ -22,7 +22,7 @@ int get_symbols(FILE *in)
 		strncpy(symbol, line, i);
 		symbol[i] = '\0';
 		i++;
-		for (j = i; j != '\n'; ++j) ;
+		for (j = i; line[j] != '\n'; ++j) ;
 		strncpy(value, line + i, j - i);
 		add_label(symbol, (int) strtol(value, NULL, 0));
 	}
