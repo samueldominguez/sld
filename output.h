@@ -5,7 +5,13 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-#include <arpa/inet.h>
+#ifdef _WIN32
+	#include <winsock2.h>
+#else
+	#include <arpa/inet.h>
+#endif
+
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
