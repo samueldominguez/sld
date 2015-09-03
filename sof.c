@@ -17,7 +17,9 @@ int get_symbols(FILE *in)
 		error("corrupt SOF file format");
 		return 1;
 	}
-	while (fgets(line, MAX_SYMBOL_LINE_SIZE, in) != NULL && (strcmp(line, SOF_BINARY_START) != 0) && (strcmp(line, SOF_END) != 0)) {
+	while (fgets(line, MAX_SYMBOL_LINE_SIZE, in) != NULL) {
+		if (strcmp(line, SOF_BINARY_START) == 0) break;
+		else if (strcmp(line, SOF_END) == 0) break;
 		for (i = 0; line[i] != ' '; ++i) ;
 		strncpy(symbol, line, i);
 		symbol[i] = '\0';
@@ -48,9 +50,10 @@ int write_to_ram(FILE *in)
 		error("corrupt file format");
 		return 1;
 	}
-	fseek(in, -4, SEEK_END);
+	fsetpos(in, &filepos);
+	fseek(in, -1, SEEK_CUR);
 	c = (char) fgetc(in);
-	if (c == ':') {
+	if (c == 'd') {
 		/* its a library object file, nothing to do here */
 		return 0;
 	} else {
