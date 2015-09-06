@@ -3,10 +3,11 @@ SLD is a DCPU-16 linker for SOF format object files. It supports SOF
 but can be easily extended to support other formats.
 SLD stands for simple linker. It outputs binaries from object files.
 
+It supports the ORG directive through commmand line argument --org <address>
+
 It should compile on all UNIX operating systems and on Windows with MinGW.
 
 TODO:
-relocation tables
 other more advanced object format support
 cooperation with ORG directives (not yet supported by SAS)
 

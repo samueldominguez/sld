@@ -27,6 +27,8 @@ static void display_usage(void)
 	fprintf(stderr,
 	"  -o outfile		write binary to outfile, default name is a.bin\n");
 	fprintf(stderr,
+	"  --org <address>	binary expects to be loaded at <address>
+	fprintf(stderr,
 	"  --version		display version number and exit\n");
 	fprintf(stderr,
 	"  -h, --help		display this help and exit\n");
@@ -77,12 +79,14 @@ static void handle_args(int argc, char **argv)
 	static const struct option longopts[] = {
 		{"help", no_argument, NULL, 0},
 		{"version", no_argument, NULL, 0},
+		{"org", required_argument, NULL, 0},
 	};
 
 	opts.obj_fname = NULL;
 	opts.bin_fname = NULL;
 	opts.bin_name_spec = 0;
 	opts.obj_fcount = 0;	
+	opts.org = 0;
 
 	opt = getopt_long(argc, argv, optstring, longopts, &longind);
 
@@ -113,6 +117,9 @@ static void handle_args(int argc, char **argv)
 					longopts[longind].name) == 0) {
 				display_version();
 				exit(EXIT_FAILURE);
+			} else if (strcmp("org",
+					longopts[longind].name) == 0) {
+				opts.org = strtol(optarg, NULL, 0);
 			}
 			break;
 		}
@@ -177,6 +184,7 @@ int main(int argc, char **argv)
 	else printf("bin file: '%s'\n", defout);
 
 	init_label_table();
+	printf("org: %d\n", opts.org);
 
 	lines = 0;
 	for (i = 0; i < opts.obj_fcount; ++i) {

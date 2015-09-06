@@ -4,6 +4,8 @@
  */
 #include "sof.h"
 
+extern struct opt_t opts;
+
 int get_symbols(FILE *in)
 {
 	char line[MAX_SYMBOL_LINE_SIZE];
@@ -26,7 +28,7 @@ int get_symbols(FILE *in)
 		i++;
 		for (j = i; line[j] != '\n'; ++j) ;
 		strncpy(value, line + i, j - i);
-		add_label(symbol, (int) strtol(value, NULL, 0));
+		add_label(symbol, (int) strtol(value, NULL, 0) + opts.org);
 	}
 	return 0;
 }

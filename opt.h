@@ -10,6 +10,7 @@ struct opt_t {
 	char *bin_fname; /* name of the binary file */
 	int bin_name_spec; /* did the user specify a binary name? */
 	int obj_fcount; /* how many object files? */
+	int org;	/* where the program expects to be loaded */
 };
 
 #endif /* OPT_H */

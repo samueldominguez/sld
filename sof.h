@@ -7,6 +7,7 @@
 
 #include "output.h"
 #include "label.h"
+#include "opt.h"
 
 extern void error(char *s);
 
