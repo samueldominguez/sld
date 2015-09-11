@@ -27,7 +27,9 @@ static void display_usage(void)
 	fprintf(stderr,
 	"  -o outfile		write binary to outfile, default name is a.bin\n");
 	fprintf(stderr,
-	"  --org <address>	binary expects to be loaded at <address>
+	"  --org <address>	binary expects to be loaded at <address>\n");
+	fprintf(stderr,
+	"  --relocation		generates relocation tables\n");
 	fprintf(stderr,
 	"  --version		display version number and exit\n");
 	fprintf(stderr,
