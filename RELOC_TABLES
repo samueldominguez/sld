@@ -1,0 +1,10 @@
+ZeNEX relocation tables format:
+
++----------------+
+| Magic Number   | is 0x0127
+| Version Number | is 0x9819
+| Entry point    | offset from Magic Number to jump to
+| Size of table  | size in words including this field
+| Symbol 1       | offset from Magic Number to the symbol
+| Symbol n       | ...
++----------------+
