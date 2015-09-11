@@ -80,13 +80,15 @@ static void handle_args(int argc, char **argv)
 		{"help", no_argument, NULL, 0},
 		{"version", no_argument, NULL, 0},
 		{"org", required_argument, NULL, 0},
+		{"relocation", no_argument, NULL, 0},
 	};
 
 	opts.obj_fname = NULL;
 	opts.bin_fname = NULL;
 	opts.bin_name_spec = 0;
-	opts.obj_fcount = 0;	
+	opts.obj_fcount = 0;
 	opts.org = 0;
+	opts.reloc_tables = 0;
 
 	opt = getopt_long(argc, argv, optstring, longopts, &longind);
 
@@ -120,6 +122,9 @@ static void handle_args(int argc, char **argv)
 			} else if (strcmp("org",
 					longopts[longind].name) == 0) {
 				opts.org = strtol(optarg, NULL, 0);
+			} else if (strcmp("relocation",
+					longopts[longind].name) == 0) {
+				opts.reloc_tables = 1;
 			}
 			break;
 		}

@@ -11,6 +11,7 @@ struct opt_t {
 	int bin_name_spec; /* did the user specify a binary name? */
 	int obj_fcount; /* how many object files? */
 	int org;	/* where the program expects to be loaded */
+	int reloc_tables;	/* generate relocation tables? */
 };
 
 #endif /* OPT_H */
