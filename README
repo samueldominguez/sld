@@ -4,6 +4,9 @@ but can be easily extended to support other formats.
 SLD stands for simple linker. It outputs binaries from object files.
 
 It supports the ORG directive through commmand line argument --org <address>
+HOWEVER this only needs to be specified either in the assembler or the
+linker, NOT on both e.g. --org 0x200 on assembler + --org 0x200 on linker
+means binary expects to be loaded at 0x400.
 
 It should compile on all UNIX operating systems and on Windows with MinGW.
 
