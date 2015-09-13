@@ -8,11 +8,13 @@ HOWEVER this only needs to be specified either in the assembler or the
 linker, NOT on both e.g. --org 0x200 on assembler + --org 0x200 on linker
 means binary expects to be loaded at 0x400.
 
+It suppors relocation tables through the command line option --relocation.
+Read the file RELOC_TABLES for more information
+
 It should compile on all UNIX operating systems and on Windows with MinGW.
 
 TODO:
 other more advanced object format support
-cooperation with ORG directives (not yet supported by SAS)
 
 It is entirely written in C and released under the GPLv2.
 If you want to contact me, my email is samuel.dominguez.lorenzo@gmail.com
