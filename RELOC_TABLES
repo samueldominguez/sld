@@ -8,3 +8,7 @@ ZeNEX relocation tables format:
 | Symbol 1       | offset from Magic Number to the symbol
 | Symbol n       | ...
 +----------------+
+
+IMPORTANT:
+Entry point will always be __main symbol, unless that is not specified, the
+entry point will be the first word after the relocation tables.

@@ -14,6 +14,7 @@ extern void error(char *s);
 #define SOF_SYMBOL_START        "symbols:\n"
 #define SOF_BINARY_START        "binary:\n"
 #define SOF_END                 "end"
+#define SOF_ENTRY_POINT		"__main"
 
 /* expects in to be an open stream in READ mode 
  * returns 0 on success, 1 on failure */

@@ -191,7 +191,7 @@ int main(int argc, char **argv)
 	else printf("bin file: '%s'\n", defout);
 
 	init_label_table();
-	printf("org: %d\n", opts.org);
+	init_reloc();
 
 	lines = 0;
 	for (i = 0; i < opts.obj_fcount; ++i) {

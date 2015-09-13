@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-c -g
 LDFLAGS=-g
-SOURCES=sld.c label.c output.c sof.c
+SOURCES=sld.c label.c output.c sof.c reloc.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=sld
 

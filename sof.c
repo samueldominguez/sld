@@ -86,8 +86,13 @@ int write_to_ram(FILE *in)
 					sprintf(errorstring, "undefined symbol '%s'", line);
 					error(errorstring);
 					return 1;
+				} else if (strcmp(SOF_ENTRY_POINT, line) == 0) {
+					printf("entry point!\n");
+					reloc.entry_point = value;
+					printf("entry_point: %d\n", reloc.entry_point);
 				}
 				ram[currw] = (u16) value;
+				add_reloc(currw);
 				currw++;
 			}
 			fgetc(in);

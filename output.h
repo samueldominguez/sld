@@ -11,11 +11,12 @@
 	#include <arpa/inet.h>
 #endif
 
-
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "sld.h"
+#include "opt.h"
+#include "reloc.h"
 
 #define MAX_SYMBOL_LINE_SIZE		73
 #define MAX_SYMBOL_SIZE			64
