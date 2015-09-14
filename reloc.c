@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2015 Samuel Dominguez Lorenzo
+ */
 #include "reloc.h"
 
 extern void sld_error(char *s);

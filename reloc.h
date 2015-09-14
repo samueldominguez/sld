@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2015 Samuel Dominguez Lorenzo
+ */
 #ifndef RELOC_H
 #define RELOC_H
 
