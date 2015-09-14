@@ -8,10 +8,12 @@ EXECUTABLE=sld
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+	@$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+	@echo "LINK	$@"
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $@
+	@$(CC) $(CFLAGS) $< -o $@
+	@echo "CC	$<"
 
 clean:
 	rm -f $(OBJECTS)
